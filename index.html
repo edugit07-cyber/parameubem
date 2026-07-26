@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosso Amor | Memórias</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="heart-container"></div>
+
+  <!-- Menu de Navegação Superior -->
+  <nav class="nav-bar">
+    <button class="nav-link active" onclick="switchPage('page-tempo', this)">Tempo</button>
+    <button class="nav-link" onclick="switchPage('page-fotos', this)">Fotinhas</button>
+    <button class="nav-link" onclick="switchPage('page-carta', this)">recadinho</button>
+  </nav>
+
+  <main class="container">
+    
+    <!-- PÁGINA 1: TEMPO -->
+    <section id="page-tempo" class="page-content active">
+      <header class="card hero-card">
+        <span class="subtitle">Para Sempre</span>
+        <h1>Eu Te Amo!!</h1>
+        <div class="divider"></div>
+        <p class="tagline">Cada Segundo Com Você é Um Sonho Pra Mim</p>
+      </header>
+
+      <div class="card timer-card">
+        <h2>Namorando Com Meu Bem Há</h2>
+        <div class="timer-container">
+          <div class="timer-box"><span id="days">00</span><label>Dias</label></div>
+          <div class="timer-divider">:</div>
+          <div class="timer-box"><span id="hours">00</span><label>Horas</label></div>
+          <div class="timer-divider">:</div>
+          <div class="timer-box"><span id="minutes">00</span><label>Minutos</label></div>
+          <div class="timer-divider">:</div>
+          <div class="timer-box"><span id="seconds">00</span><label>Segundos</label></div>
+        </div>
+      </div>
+
+      <div class="card action-card">
+        <button class="interactive-btn" onclick="goToPage('page-fotos', 1)">
+          <span>Ver Nossos Momentos ➔</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- PÁGINA 2: FOTOS -->
+    <section id="page-fotos" class="page-content">
+      <div class="card gallery-card">
+        <span class="subtitle">Memórias Inesquecíveis</span>
+        <h2>Nossos Momentos</h2>
+        <div class="divider"></div>
+        
+        <div class="carousel-wrapper">
+          <div class="carousel-slide" id="carouselSlide">
+            <div class="slide-item"><img src="IMG_3247.jpeg" alt="Momento 1"></div>
+            <div class="slide-item"><img src="IMG_3519.PNG" alt="Momento 2"></div>
+            <div class="slide-item"><img src="IMG_3938.jpeg" alt="Momento 3"></div>
+          </div>
+          
+          <button class="carousel-btn prev" onclick="moveSlide(-1)" aria-label="Anterior">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <button class="carousel-btn next" onclick="moveSlide(1)" aria-label="Próximo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="card action-card">
+        <button class="interactive-btn" onclick="goToPage('page-carta', 2)">
+          <span>Ler Minha Carta ➔</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- PÁGINA 3: CARTA -->
+    <section id="page-carta" class="page-content">
+      <article class="card letter-card">
+        <span class="letter-badge">Um Recadinho Para Você</span>
+        <div class="love-letter">
+Meu Bem,Criei isso justamente para eternizar a nossa história; assim, sempre que você quiser nos ver na internet, estaremos lá. Fiz isso porque te amo e vou te provar esse amor todos os dias. Espero do fundo do coração que você goste e se sinta tão amada quanto merece. Desculpe a demora, mas aqui está!
+
+Te amo demais, minha vida. Vou lutar por nós para sempre. Que Deus abençoe a nossa união e nos proteja de todo o mal. Vou te amar eternamente, princesa! Um beijo, meu bem.
+        </div>
+      </article>
+
+      <div class="card action-card">
+        <button class="interactive-btn" onclick="triggerLove()">
+          <span>Um Lembrete Especial ❤️</span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Player de Áudio Persistente -->
+  <div class="music-player">
+    <div class="music-info">
+      <span class="music-title">Nossa Musiquinha</span>
+    </div>
+    <button class="music-btn" id="musicBtn" onclick="toggleMusic()" aria-label="Tocar Música">
+      <svg id="playIcon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+      <svg id="pauseIcon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+    </button>
+    <audio id="bgMusic" loop>
+      <source src="ytmp3free.cc_eyes-without-a-face-youtubemp3free.org.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
